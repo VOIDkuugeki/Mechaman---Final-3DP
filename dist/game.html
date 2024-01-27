@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Mechaman Game</title>
+    	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+    <script src="script.js"></script>
+	<script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.1/examples/jsm/"
+            }
+        }
+    </script>
+	<style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Orbitron';
+            background: url('Page_img/bg.gif') no-repeat center center fixed;
+            background-size: cover;
+        }
+        #gameOverScreen, #victoryScreen {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            color: white;
+        }
+        #retryButton, #playAgainButton {
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gameOverScreen" class="screen" style="display: none;">
+        <h1>Game Over</h1>
+        <button onclick="retryGame()">Retry</button>
+    </div>
+
+    <div id="victoryScreen" class="screen" style="display: none;">
+        <h1>Victory!</h1>
+        <button onclick="returnHome()">Return Home</button>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="Page_img\Gundam Build Fighters - OST - CD1 - 18. Battle Bar.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechaman Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="start-screen">
+        <img src="page_img/title.png" alt="Title Image" class="title-image">
+        <h1 class="game-title">Mechaman Spacewar</h1>
+        <div class="button-container">
+            <button onclick="startGame()" class="start-button" onmouseover="showHoverImage()"
+                onmouseout="hideHoverImage()">Start
+                <!-- Hover image container -->
+                <div class="hover-image-container">
+                    <img src="page_img/round.png" alt="Hover Image" class="hover-image">
+                </div>
+            </button>
+            <!-- Tutorial button -->
+            <button onclick="showTutorial()" class="tutorial-button" onmouseover="showHoverImage()"
+                onmouseout="hideHoverImage()">Help
+                <!-- Hover image container for tutorial button -->
+                <div class="hover-image-container">
+                    <img src="page_img/round.png" alt="Hover Image" class="hover-image">
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="loading-screen" style="display: none;">
+        <h2>CONNECTING SYSTEM...</h2>
+    </div>
+
+    <!-- Tutorial description board -->
+    <div class="tutorial-board" style="display: none;">
+        <button onclick="hideTutorial()" class="close-button">[X]</button>
+        <br>
+        <p>WASD to move</p>
+        <br>
+        <p>Left click to shoot</p>
+        <br>
+        <p>Spacebar to boost speed</p>
+    </div>
+
+    <!-- Music player and toggle button -->
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="Page_img/musique.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="musicToggleButton" class="music-toggle-button" onclick="toggleMusic()">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Include your script file -->
+    <script src="script.js"></script>
+    <script src="music.js"></script>
+
+</body>
+
+</html>

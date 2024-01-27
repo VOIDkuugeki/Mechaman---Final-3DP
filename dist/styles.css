@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: url('Page_img/bg.gif') center/cover no-repeat; /* Update with your space background */
+}
+
+.start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 15vh; /* Adjust the top padding to move content higher up */
+}
+
+.game-title {
+    font-size: 4em;
+    margin-top: 0px ;
+    margin-bottom: 10px; /* Reduce the margin */
+}
+
+.title-image {
+    max-width: 80%;
+    margin-bottom: 0px; /* Reduce the margin */
+}
+
+.button-container {
+    position: relative;
+}
+
+.start-button,
+.tutorial-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    margin-top: 10px;
+}
+
+.start-button:hover,
+.tutorial-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Add styles for the hover image container */
+.hover-image-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+/* Style the hover image on button hover */
+.start-button:hover .hover-image-container,
+.tutorial-button:hover .hover-image-container {
+    display: block;
+}
+
+.start-button:hover .hover-image-container .hover-image,
+.tutorial-button:hover .hover-image-container .hover-image {
+    opacity: 1;
+}
+
+/* Style the hover image */
+.hover-image {
+    max-width: 100px;
+    max-height: 100px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* Style the tutorial board */
+.tutorial-board {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Start with scale(0) to hide the board */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 20px;
+    display: none;
+    text-align: center;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect for the transform property */
+}
+
+.tutorial-board.active {
+    transform: translate(-50%, -50%) scale(1); /* Scale to 1 when active */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.close-button:hover {
+    color: #ff0000; /* Change the color when hovered */
+}
+
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('Page_img/load.gif') center/cover no-repeat fixed; /* Update the background property to cover the whole page */
+    color: #ffffff; /* Update loading screen text color */
+}
+
+.loading-screen::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Page_img/load.gif') center/cover no-repeat;
+    z-index: -1;
+    display: none; /* Hide the background image when not on the loading screen */
+}
+
+.loading-screen.active::after {
+    display: block; /* Show the background image when the loading screen is active */
+}
+
+.music-toggle-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
+.music-toggle-button i {
+    transition: color 0.3s ease;
+}
+
+.music-toggle-button.active i {
+    color: #ff0000; /* Change to your desired color when music is active */
+}
